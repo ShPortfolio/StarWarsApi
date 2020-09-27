@@ -15,7 +15,6 @@ export const actions = {
   async getMovies (context, searchedMov) {
   	fetch(`https://swapi.dev/api/films/?search=${searchedMov}`)
   	.then(response => {
-  		console.log(response)
       response.json().then(list => {
       		context.commit('setFilms', list);
       })
